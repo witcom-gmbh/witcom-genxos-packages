@@ -11,7 +11,7 @@ docker run --rm -v "$(pwd)"/bin/:/home/build/openwrt/bin -it openwrtorg/sdk:kirk
 cd /tmp
 git@github.com:witcom-gmbh/witcom-genxos-packages.git
 cd -
-cp /tmp/witcom-genxos-packages/diffconfig .config
+cp /tmp/witcom-genxos-packages/witcom-genxos-helper/diffconfig .config
 ./scripts/feeds update base
 make defconfig
 cp -rf /tmp/witcom-genxos-packages/witcom-genxos-helper package/
@@ -19,4 +19,4 @@ make package/witcom-genxos-helper/compile -j$(nproc)
 exit
 ```
 
-Das erzeugte Pakete liegt dann unter ./bin
+Das erzeugt Pakete liegt dann unter ./bin
